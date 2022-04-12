@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="com.mazzouzi.memoryleak.ui.basefragment.UserEnum" />
+
+        <variable
+            name="viewModel"
+            type="com.mazzouzi.memoryleak.ui.basefragment.SharedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/super_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:gravity="center"
+            android:onClick="@{() -> viewModel.onUserSelected(UserEnum.ADMIN)}"
+            android:padding="16dp"
+            android:text="@string/admin"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/owner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:gravity="center"
+            android:onClick="@{() -> viewModel.onUserSelected(UserEnum.SUPER_USER)}"
+            android:padding="16dp"
+            android:text="@string/super_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/super_user" />
+
+        <TextView
+            android:id="@+id/guest"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:gravity="center"
+            android:onClick="@{() -> viewModel.onUserSelected(UserEnum.USER)}"
+            android:padding="16dp"
+            android:text="@string/user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/owner" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

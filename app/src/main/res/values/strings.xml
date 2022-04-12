@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">CircularReferenceLeak</string>
+    <string name="reference_from_background">(1) Press back to destroy the fragment before the intensive work finishes (120sec) \n %s</string>
+    <string name="singleton_reference">(1) Press the button then press back twice once the popup is displayed \n %s</string>
+    <string name="android_api_reference">(1) Rotate your device to destroy the Activity \n %s</string>
+    <string name="base_fragment_reference">(1) Select another user on the left screen\n %s</string>
+
+    <string name="memory_leak_instructions">
+        "
+(2) Wait until LeakCanary displays a Toast \n
+(3) LeakCanary analyses the heap… \n
+(4) Tap on the new LeakCanary notification starting with\n \"Found X retained object..\" \n
+(5) You can now analyse the leak trace \n
+        "
+    </string>
+
+    <string name="no_memory_leak_instructions">
+        "
+(2) There should no toast from LeakCanary \n
+        "
+    </string>
+    <string name="leak">Leak</string>
+    <string name="solution">Solution</string>
+    <string name="holding_reference_from_background">Holding reference from background</string>
+    <string name="holding_reference_from_singleton">Holding reference from singleton</string>
+    <string name="holding_reference_from_anonymous_class">Holding reference from anonymous class</string>
+    <string name="holding_reference_from_android_api">Holding reference from Android API</string>
+    <string name="holding_reference_from_base_fragment">Holding reference from base fragment</string>
+    <string name="get_latest_news">get latest news</string>
+    <string name="admin_screen">ADMIN SCREEN</string>
+    <string name="registering_to_broadcast_receiver">Registered to broadcast receiver</string>
+    <string name="intensive_work_in_progress">Intensive work in progress…</string>
+    <string name="some_work_in_progress">Some work in progress…</string>
+    <string name="super_user">SUPER USER</string>
+    <string name="user">USER</string>
+    <string name="admin">ADMIN</string>
+    <string name="user_screen">USER SCREEN</string>
+</resources>
