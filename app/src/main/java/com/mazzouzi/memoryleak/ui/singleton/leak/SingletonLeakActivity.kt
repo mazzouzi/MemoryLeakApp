@@ -29,13 +29,13 @@ class SingletonLeakActivity: AppCompatActivity() {
             coroutineScope.launch(Dispatchers.IO) {
                 delay(500) // simulate API call
                 withContext(Dispatchers.Main) {
-                    fetchLatestNews("An error occured")
+                    onError("An error occured")
                 }
             }
         }
     }
 
-    private fun fetchLatestNews(errorMessage: String) {
+    private fun onError(errorMessage: String) {
         /**
          * A static class outlives an Activity.
          * Passing "this" as a field to a static class -> memory leak ❌

@@ -1,4 +1,4 @@
-package com.mazzouzi.memoryleak.ui.singleton.solution
+package com.mazzouzi.memoryleak.ui.singleton.solutionfinal
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import com.mazzouzi.memoryleak.R
 import com.mazzouzi.memoryleak.databinding.ActivitySingletonSolutionBinding
 import kotlinx.coroutines.*
 
-class SingletonSolutionActivity: AppCompatActivity() {
+class SingletonSolutionFinalActivity: AppCompatActivity() {
 
     private var _binding: ActivitySingletonSolutionBinding? = null
     private val binding get() = _binding!!
@@ -41,17 +41,24 @@ class SingletonSolutionActivity: AppCompatActivity() {
          * of DialogUtilSolution singleton.
          * Once the function returns, the copy is popped off the stack
          * -> no memory leak ✅
-         *
-         * Be careful, this code will still leak if the user changes configuration while
-         * the dialog is displayed because the dialog is not tied to the Activity's lifecycle upon
-         * recreation. Please check "solutionfinal" package for complete solution.
          */
-        DialogUtilSolution.showError(this, "News", errorMessage)
+        DialogUtilSolutionFinal.showError(this, "News", errorMessage)
     }
 
     override fun onDestroy() {
-        coroutineScope.cancel("Cancelling scope from SingletonSolutionActivity onDestroy()")
+        coroutineScope.cancel()
         _binding = null
+        /**
+         * Don't forget to clear the dialog to avoid another leak upon config change.
+         */
+        DialogUtilSolutionFinal.clearDialog()
         super.onDestroy()
     }
 }
+
+
+
+
+
+
+

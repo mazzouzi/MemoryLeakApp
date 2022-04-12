@@ -22,6 +22,7 @@
 
         <activity android:name=".ui.singleton.leak.SingletonLeakActivity" />
         <activity android:name=".ui.singleton.solution.SingletonSolutionActivity" />
+        <activity android:name=".ui.singleton.solutionfinal.SingletonSolutionFinalActivity" />
         <activity
             android:name=".ui.basefragment.SplitViewActivity"
             android:screenOrientation="landscape"
